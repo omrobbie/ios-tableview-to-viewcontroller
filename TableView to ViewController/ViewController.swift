@@ -36,4 +36,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = colors[indexPath.row]
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: colors[indexPath.row])
+        present(vc!, animated: true)
+    }
 }
